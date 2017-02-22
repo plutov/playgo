@@ -4,7 +4,7 @@
 ### Installation and Usage
 
 ```
-go get -u github.com/plutov/playgo
+go get -u github.com/plutov/playgo/cmd/playgo
 playgo helloworld.go
 https://play.golang.org/p/v3rrZLwEUC
 ```
