@@ -53,7 +53,7 @@ func Share(path string) (string, error) {
 		return "", fmt.Errorf("File %s is empty", path)
 	}
 
-	req, err := http.NewRequest("POST", playGoURL, file)
+	req, err := http.NewRequest("POST", playGoURL+"/share", file)
 	if err != nil {
 		return "", err
 	}
