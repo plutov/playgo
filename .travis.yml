@@ -1,0 +1,9 @@
+language: go
+go:
+ - 1.8
+
+install:
+ - export PATH=$PATH:$HOME/gopath/bin
+
+script:
+ - go test -v

@@ -1,4 +1,5 @@
-[![Chat at https://gitter.im/plutov/playgo](https://img.shields.io/badge/gitter-dev_chat-46bc99.svg)](https://gitter.im/plutov/playgo)
+[![Build Status](https://travis-ci.org/plutov/playgo.svg?branch=master)](https://travis-ci.org/plutov/playgo)
+[![Chat](https://img.shields.io/badge/gitter-dev_chat-46bc99.svg)](https://gitter.im/plutov/playgo)
 
 ### Installation and Usage
 
