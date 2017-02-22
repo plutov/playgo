@@ -12,7 +12,7 @@ var shares = []struct {
 	{"iujo7y9n86gn6gjiwef", false},
 	{"README.md", false},
 	{".empty", false},
-	{"cmd/main.go", true},
+	{"cmd/playgo/main.go", true},
 }
 
 func TestShare(t *testing.T) {
@@ -24,6 +24,10 @@ func TestShare(t *testing.T) {
 
 		if s.ok && url == "" {
 			t.Errorf("Share(%s) expected non-empty url", s.path)
+		}
+
+		if s.ok && url[:5] != "https" {
+			t.Errorf("Share(%s) expected valid url, got url %s", s.path, url)
 		}
 	}
 }
