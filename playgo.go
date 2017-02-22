@@ -1,6 +1,7 @@
 package playgo
 
 import (
+	"bytes"
 	"flag"
 	"fmt"
 	"github.com/skratchdot/open-golang/open"
@@ -53,7 +54,7 @@ func Share(path string) (string, error) {
 		return "", fmt.Errorf("File %s is empty", path)
 	}
 
-	req, err := http.NewRequest("POST", playGoURL+"/share", file)
+	req, err := http.NewRequest("POST", playGoURL+"/share", bytes.NewReader(b))
 	if err != nil {
 		return "", err
 	}
