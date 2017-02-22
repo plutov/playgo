@@ -16,6 +16,7 @@ const (
 
 // ShareAndOpen func
 func ShareAndOpen() (string, error) {
+	flag.Parse()
 	path := flag.Arg(0)
 
 	url, shareErr := Share(path)
