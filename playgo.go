@@ -11,9 +11,7 @@ import (
 	"path/filepath"
 )
 
-const (
-	playGoURL = "https://play.golang.org"
-)
+var playgroundHost = "https://play.golang.org"
 
 // ShareAndOpen func
 func ShareAndOpen() (string, error) {
@@ -54,10 +52,11 @@ func Share(path string) (string, error) {
 		return "", fmt.Errorf("File %s is empty", path)
 	}
 
-	req, err := http.NewRequest("POST", playGoURL+"/share", bytes.NewReader(b))
+	req, err := http.NewRequest("POST", playgroundHost+"/share", bytes.NewReader(b))
 	if err != nil {
 		return "", err
 	}
+	req.Header.Set("User-Agent", "playgo/1.0")
 
 	c := new(http.Client)
 	resp, err := c.Do(req)
@@ -71,5 +70,5 @@ func Share(path string) (string, error) {
 		return "", respErr
 	}
 
-	return fmt.Sprintf("%s/p/%s", playGoURL, string(respBody)), nil
+	return fmt.Sprintf("%s/p/%s", playgroundHost, string(respBody)), nil
 }
