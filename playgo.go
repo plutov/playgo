@@ -1,7 +1,6 @@
 package playgo
 
 import (
-	"bytes"
 	"flag"
 	"fmt"
 	"github.com/skratchdot/open-golang/open"
@@ -44,15 +43,15 @@ func Share(path string) (string, error) {
 		return "", fmt.Errorf("File %s is not a .go file", path)
 	}
 
-	b, readErr := ioutil.ReadAll(file)
-	if readErr != nil {
-		return "", readErr
+	fileInfo, err := file.Stat()
+	if err != nil {
+		return "", err
 	}
-	if len(b) == 0 {
+	if fileInfo.Size() == 0 {
 		return "", fmt.Errorf("File %s is empty", path)
 	}
 
-	req, err := http.NewRequest("POST", playgroundHost+"/share", bytes.NewReader(b))
+	req, err := http.NewRequest("POST", playgroundHost+"/share", file)
 	if err != nil {
 		return "", err
 	}
