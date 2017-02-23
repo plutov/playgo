@@ -13,7 +13,7 @@ var shares = []struct {
 	{"", false},
 	{"iujo7y9n86gn6gjiwef", false},
 	{"README.md", false},
-	{".empty", false},
+	{".empty.go", false},
 	{"cmd/playgo/main.go", true},
 }
 
