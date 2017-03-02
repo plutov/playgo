@@ -5,6 +5,7 @@ go:
 install:
  - export PATH=$PATH:$HOME/gopath/bin
  - go get github.com/skratchdot/open-golang/open
+ - go get github.com/atotto/clipboard
 
 script:
  - go test -v
