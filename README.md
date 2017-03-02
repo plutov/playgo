@@ -3,12 +3,12 @@
 
 Usually when we share a runnable Go code we do: copy code, open [Go Playground](https://play.golang.org/), paste code, click Share.
 
-So `playgo` does it for you.
+So `playgo` does it for you: open link in the browser and also copy it to clipboard.
 
 ### Installation and Usage
 
 ```
 go get -u github.com/plutov/playgo/cmd/playgo
 playgo helloworld.go
-https://play.golang.org/p/v3rrZLwEUC
+https://play.golang.org/p/v3rrZLwEUC (copied to clipboard)
 ```
