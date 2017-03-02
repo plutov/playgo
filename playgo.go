@@ -3,6 +3,7 @@ package playgo
 import (
 	"flag"
 	"fmt"
+	"github.com/atotto/clipboard"
 	"github.com/skratchdot/open-golang/open"
 	"io/ioutil"
 	"net/http"
@@ -22,6 +23,7 @@ func ShareAndOpen() (string, error) {
 		return "", shareErr
 	}
 
+	clipboard.WriteAll(url)
 	openErr := open.Start(url)
 	if openErr != nil {
 		return "", openErr

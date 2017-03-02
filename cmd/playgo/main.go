@@ -14,5 +14,5 @@ func main() {
 		os.Exit(1)
 	}
 
-	fmt.Println(url)
+	fmt.Printf("%s (copied to clipboard)\n", url)
 }
