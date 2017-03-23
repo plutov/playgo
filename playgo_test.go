@@ -3,23 +3,31 @@ package playgo
 import (
 	"net/http"
 	"net/http/httptest"
+	"os"
 	"testing"
 )
 
-var shares = []struct {
-	path string
-	ok   bool
-}{
-	{"", false},
-	{"iujo7y9n86gn6gjiwef", false},
-	{"README.md", false},
-	{".empty.go", false},
-	{"cmd/playgo/main.go", true},
-}
+var (
+	emptyFileName = ".empty.go"
+
+	shares = []struct {
+		path string
+		ok   bool
+	}{
+		{"", false},
+		{"iujo7y9n86gn6gjiwef", false},
+		{"README.md", false},
+		{emptyFileName, false},
+		{"cmd/playgo/main.go", true},
+	}
+)
 
 var mockServer *httptest.Server
 
 func init() {
+	// create test empty file
+	os.OpenFile(emptyFileName, os.O_CREATE, 0755)
+
 	mux := http.NewServeMux()
 	mux.HandleFunc("/share", func(w http.ResponseWriter, req *http.Request) {})
 
@@ -42,4 +50,6 @@ func TestShare(t *testing.T) {
 			t.Errorf("Share(%s) expected valid url, got url %s", s.path, url)
 		}
 	}
+
+	os.Remove(emptyFileName)
 }

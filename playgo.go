@@ -25,11 +25,8 @@ func ShareAndOpen() (string, error) {
 
 	clipboard.WriteAll(url)
 	openErr := open.Start(url)
-	if openErr != nil {
-		return "", openErr
-	}
 
-	return url, nil
+	return url, openErr
 }
 
 // Share func
