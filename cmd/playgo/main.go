@@ -2,15 +2,15 @@ package main
 
 import (
 	"fmt"
-	"github.com/plutov/playgo"
 	"os"
+
+	"github.com/plutov/playgo"
 )
 
 func main() {
 	url, err := playgo.ShareAndOpen()
 	if err != nil {
-		fmt.Println("Error: " + err.Error())
-		fmt.Println("USAGE: playgo [FILE]")
+		fmt.Printf("Error: %s\nUSAGE: playgo [FILE]\n", err.Error())
 		os.Exit(1)
 	}
 
