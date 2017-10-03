@@ -3,12 +3,13 @@ package playgo
 import (
 	"flag"
 	"fmt"
-	"github.com/atotto/clipboard"
-	"github.com/skratchdot/open-golang/open"
 	"io/ioutil"
 	"net/http"
 	"os"
 	"path/filepath"
+
+	"github.com/atotto/clipboard"
+	"github.com/skratchdot/open-golang/open"
 )
 
 var playgroundHost = "https://play.golang.org"

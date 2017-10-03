@@ -36,6 +36,8 @@ func init() {
 }
 
 func TestShare(t *testing.T) {
+	defer os.Remove(emptyFileName)
+
 	for _, s := range shares {
 		url, err := Share(s.path)
 		if (err == nil) != s.ok {
@@ -50,6 +52,4 @@ func TestShare(t *testing.T) {
 			t.Errorf("Share(%s) expected valid url, got url %s", s.path, url)
 		}
 	}
-
-	os.Remove(emptyFileName)
 }
