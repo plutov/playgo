@@ -5,10 +5,12 @@ Usually when we share a runnable Go code we do: copy code, open [Go Playground](
 
 So `playgo` does it for you.
 
-### Installation and Usage
+### Install
 
 ```
 go get -u github.com/plutov/playgo/cmd/playgo
-playgo helloworld.go
-https://play.golang.org/p/v3rrZLwEUC (copied to clipboard)
 ```
+
+### Usage
+
+![usage.gif](https://raw.githubusercontent.com/plutov/playgo/master/usage.gif)
