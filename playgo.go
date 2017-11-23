@@ -25,9 +25,8 @@ func ShareAndOpen() (string, error) {
 	}
 
 	clipboard.WriteAll(url)
-	openErr := open.Start(url)
 
-	return url, openErr
+	return url, open.Start(url)
 }
 
 // Share func
@@ -38,8 +37,7 @@ func Share(path string) (string, error) {
 	}
 	defer file.Close()
 
-	ext := filepath.Ext(path)
-	if ext != ".go" {
+	if ext := filepath.Ext(path); ext != ".go" {
 		return "", fmt.Errorf("File %s is not a .go file", path)
 	}
 
