@@ -1,4 +1,4 @@
-Usually when we share a runnable Go code we do: copy code, open [Go Playground](https://play.golang.org/), paste code, click Share.
+Usually when we share a runnable Go code we do: copy code, open [Go Playground](https://go.dev), paste code, click Share.
 
 So `playgo` does it for you.
 
