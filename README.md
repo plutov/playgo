@@ -5,7 +5,7 @@ So `playgo` does it for you.
 ### Install
 
 ```
-go get -u github.com/plutov/playgo/cmd/playgo
+go install github.com/plutov/playgo/cmd/playgo@latest
 ```
 
 ### Usage
